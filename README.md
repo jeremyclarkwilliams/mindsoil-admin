@@ -24,7 +24,7 @@ Open browser and navigate to [localhost:5000/admin/](http://localhost:5000/admin
 * See listing and number of all projects
   - Toggle whether a project shows on site
   - Toggle whether a project is featured on homepage (only if toggled to "show")
-* Add new projects (to test MongoDB database; persistent)
+* Add new projects (to MongoDB test database; persistent)
   - Project Name (must be unique; visual feedback if not)
   - Title
   - Blurb
