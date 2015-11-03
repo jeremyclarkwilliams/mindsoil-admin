@@ -28,6 +28,9 @@ Open browser and navigate to [localhost:5000/admin/](http://localhost:5000/admin
   - Solution
   - Image (uploaded to folder /public/uploads/[uid]/)
   - (unique ID automatically assigned)
+  - "Save" to add project and be taken to project edit page
+  - "Save & Return" to add project and be taken back to listing page
+  - "Cancel" to return to listing page without adding project
 * Edit existing projects
   - Update all text fields and existing image
 * Link back to listing via "Admin Panel" header
