@@ -24,7 +24,7 @@
       <img ng-src="{{project.imagefull}}" ng-show="project.imagefull" />
       <p class="message" ng-hide="project.imagefull">No image added</p>
     </fieldset>
-    <fieldset class="media-input" id="video-input">
+    <!--<fieldset class="media-input" id="video-input">
       <input type="file" class="input-hide" name="videofile" data-url="/api/upload/media" />
       <button class="admin-btn add-btn">{{(projectform.videofilefake.value || project.video) ? 'Update' : 'Add'}} Video</button>
       <input type="text" class="input file-field" name="videofilefake" ng-model="videofilefake" />
@@ -35,7 +35,7 @@
         <source ng-src="{{project.video}}" type="video/mp4">
       </video>
       <p class="message" ng-hide="project.video">No video added</p>
-    </fieldset>
+    </fieldset>-->
     <div>
       <button id="project-save" class="save-btn" ng-click="saveProject()" ng-disabled="projectform.$invalid">Save</button>
       <button id="project-save-return" class="save-btn" ng-click="saveAndReturn()" ng-disabled="projectform.$invalid">Save &amp; Return</button>

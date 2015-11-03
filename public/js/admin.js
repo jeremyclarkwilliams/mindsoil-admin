@@ -214,6 +214,56 @@
       });
     };
 
+    // trigger media file input with fake button
+    $('.media-input .add-btn, .media-input .file-field').on('click', function() {
+      $(this).parent().find('input[type=file]').click();
+    });
+    $('.media-input input[type=file]').change(function() {
+      var filename = $(this).val().split('fakepath\\')[1],
+          fieldname = $(this).siblings('.file-field').attr('name');
+      $(this).siblings('.file-field').val(filename);
+      $scope.$apply(function() {
+        if (fieldname === 'imagefilefake') {
+          $scope.projectform.imagefilefake.value = filename;
+        } else if (fieldname === 'videofilefake') {
+          $scope.projectform.videofilefake.value = filename;
+        }
+      });
+    });
+
+    // image upload
+    $('#image-input input[type=file]').fileupload({
+      dataType: 'json',
+      url: '/api/upload/media',
+      add: function (e, data) {
+        $('#image-input .upload-btn').click(function() {
+          if ((/\.(gif|jpg|jpeg|tiff|png)$/i).test(data.files[0].name)) {
+            $scope.project.imagefull = '';
+            $('#image-input .progress').css('display', 'inline-block');
+            data.formData = {uid: $scope.project.uid, type: 'image'};
+            data.submit();
+          } else {
+            $('#image-input .message').addClass('error').text('Wrong file format.');
+          }
+        });
+      },
+      progressall: function (e, data) {
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        $('#image-input .progress .bar').css('width', progress + '%');
+      },
+      done: function (e, data) {
+        var filename = data.result.files[0].name;
+        $('#image-input .progress').hide();
+        $('#image-input .file-field').val('');
+        $scope.$apply(function() {
+          $scope.projectform.imagefilefake.value = '';
+          $scope.project.imagefull = '/uploads/' + $scope.project.uid + '/' + filename + '?' + new Date().getTime();
+          $scope.project.imagecropped = '/uploads/' + $scope.project.uid + '/' + filename;
+          $scope.project.imagemobile = '/uploads/' + $scope.project.uid + '/' + filename;
+        });
+      }
+    });
+
   }]);
 
   

@@ -190,9 +190,9 @@
   });
 
   // main
-  app.get('/*', function(request, response) {
+  /*app.get('/*', function(request, response) {
     response.sendFile(__dirname + '/public/index.html');
-  });
+  });*/
 
   // admin
   app.get('/admin*', function(request, response) {
