@@ -17,19 +17,20 @@ Open browser and navigate to [localhost:5000/admin/](http://localhost:5000/admin
 
 #### Current Panel Features
 
-* See listing of all projects
+* See listing and number of all projects
+  - Toggle whether a project shows on site
+  - Toggle whether a project is featured on homepage (only if toggled to "show")
 * Add new projects (added to MongoDB database)
   - Project Name (must be unique; visual feedback if not)
   - Title
   - Blurb
   - Objective
   - Solution
-  - Image (uploaded to folder /public/uploads/)
+  - Image (uploaded to folder /public/uploads/[uid]/)
   - (unique ID automatically assigned)
 * Edit existing projects
-  - Update existing images
-* Toggle whether a project shows on site (from listing)
-* Toggle whether a project is featured on homepage (from listing; only if toggled to "show")
+  - Update all text fields and existing image
+* Link back to listing via "Admin Panel" header
 
 #### Future Panel Features
 
@@ -37,4 +38,4 @@ Open browser and navigate to [localhost:5000/admin/](http://localhost:5000/admin
   - currently projects must be deleted directly from database
 * Update video on home page
 * Update/add/remove quotes on about page
-* Add/update videos to projects
+* Add videos to projects
