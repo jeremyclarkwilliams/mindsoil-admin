@@ -1,0 +1,782 @@
+@import 'reset';
+@import 'base';
+
+/* HEADER */
+
+.header {
+  width: 100%;
+  height: 6rem;
+  padding: 1rem 5rem;
+  position: fixed;
+  text-align: right;
+  z-index: 100;
+  line-height: 4rem;
+  pointer-events: none;
+
+  a {
+    color: #fff;
+    pointer-events: auto;
+
+    path {
+      fill: #fff;
+      transition: fill 0.25s;
+    }
+
+  }
+
+  a:hover,
+  a:focus,
+  .on a {
+    color: $dark-gray;
+
+    path {
+      fill: $dark-gray;
+    }
+
+  }
+
+  .logo {
+    width: 9.3rem;
+    height: 1.8rem;
+    font-size: 2.4rem;
+    font-family: $font-bold;
+    display: inline-block;
+    float: left;
+
+    a {
+      display: block;
+    }
+
+  }
+
+  .nav {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-family: $font-medium;
+
+    li {
+      margin: 0 0 0 4rem;
+      display: inline-block;
+    }
+
+    li:first-child {
+      margin: 0 0 0 2rem;
+    }
+
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+}
+
+.about .header,
+.projects .header,
+.project .header {
+  position: relative;
+  background: #fff;
+
+  a {
+    color: $light-gray;
+  }
+
+  a:hover,
+  a:focus,
+  .on a {
+    color: $dark-gray;
+  }
+
+  path {
+    fill: $dark-gray;
+  }
+
+}
+
+.client .header {
+
+  a {
+    color: $light-gray;
+  }
+
+  a:hover,
+  a:focus,
+  .on a {
+    color: #fff;
+  }
+
+}
+
+/* SECTIONS */
+
+.section {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  display: table;
+
+  .container {
+    padding: 5rem;
+    vertical-align: middle;
+    display: table-cell;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .down {
+    @extend .sprite;
+    background-position: -35px -42px;
+    display: inline-block;
+    width: 30px;
+    height: 16px;
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .down:hover,
+  .down:focus {
+    background-position: -135px -42px;
+  }
+
+}
+
+/* MAIN */
+
+.section-main {
+  background: url(../media/bg-home-poster.jpg) no-repeat center center;
+  background-size: cover;
+  text-transform: uppercase;
+
+  .container,
+  .hdr,
+  .hdr-sub,
+  .down {
+    z-index: 20;
+  }
+
+  .hdr {
+    font-size: 1.8rem;
+    margin: 0 0 1rem;
+    position: relative;
+  }
+
+  .hdr-sub {
+    font-size: 6.8rem;
+    font-family: $font-bold;
+    position: relative;
+  }
+
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 10;
+  }
+
+}
+
+/* ABOUT */
+
+.section-about {
+  background: url(../img/bg-about.jpg) no-repeat center top;
+  background-size: cover;
+
+  .hdr {
+    font-size: 3.6rem;
+    font-family: $font-light;
+    line-height: 4.8rem;
+    margin: 0 25%;
+  }
+
+}
+
+.about .section-about {
+
+  .hdr {
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    margin: 2.4rem 25%;
+  }
+
+}
+
+.about .section-sub,
+.project .section-sub {
+  color: $medium-gray;
+  padding: 5rem;
+  text-align: left;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+
+  .hdr {
+    text-transform: uppercase;
+    color: $dark-gray;
+    font-size: 1.6rem;
+    font-family: $font-medium;
+    display: table-row;
+  }
+
+  .container {
+    width: 33.33%;
+    padding: 1.4rem 2rem 0 0;
+    text-align: left;
+    vertical-align: top;
+
+    .hdr-sub {
+      color: $dark-gray;
+      font-family: $font-bold;
+    }
+
+    .desc {
+      margin: 0 0 1.4rem;
+    }
+
+  }
+
+  .container.bg {
+    background: #fff;
+    padding: 2rem;
+    top: -2.2rem;
+
+    .hdr {
+      text-transform: none;
+      margin: 0 0 1.4rem;
+    }
+
+    .desc {
+      margin: 1.4rem 0;
+    }
+
+  }
+
+  .container.img {
+    padding: 0 2rem 0 0;
+
+    img {
+      width: 100%;
+    }
+
+  }
+
+  .container.img + .container {
+    width: 66.66%;
+    padding: 0;
+
+    a {
+      color: $dark-gray;
+      font-family: $font-bold;
+    }
+
+    a:hover,
+    a:focus {
+      color: inherit;
+    }
+
+  }
+
+}
+
+.about .section-sub + .section-sub {
+  padding-top: 0;
+}
+
+.about .section-quotes {
+  background: $dark-gray;
+  position: relative;
+  vertical-align: middle;
+
+  .quote {
+    font-size: 1.6rem;
+    font-family: $font-light;
+    line-height: 2.4rem;
+    margin: 0 25%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    .container {
+      padding: 8rem 0;
+      overflow: visible;
+
+      .text {
+        margin: 0 0 2rem;
+        position: relative;
+        vertical-align: middle;
+      }
+
+      .text:before,
+      .text:after {
+        @extend .sprite;
+        content: '';
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        display: inline-block;
+      }
+
+      .text:before {
+        background-position: 0 -100px;
+        top: -7rem;
+        left: -7rem;
+      }
+
+      .text:after {
+        background-position: -100px -100px;
+        bottom: -7rem;
+        right: -7rem;
+      }
+
+      .attr {
+        color: $lighter-gray;
+      }
+
+    }
+
+  }
+
+  .quote.on {
+    opacity: 1;
+  }
+
+  .pag {
+    bottom: 3rem;
+  }
+
+}
+
+/* PROJECTS */
+
+.section-projects {
+  position: relative;
+  overflow: hidden;
+
+  .hdr {
+    font-size: 1.6rem;
+    font-family: $font-medium;
+    margin: 0 25% 1rem;
+    text-transform: uppercase;
+  }
+
+  .hdr-sub {
+    font-size: 3.6rem;
+    font-family: $font-light;
+    line-height: 4.8rem;
+    margin: 0 25%;
+  }
+
+  .project-item {
+    display: table;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: left 0.5s;
+
+    .container {
+      background: rgba(0,0,0,0.3);
+    }
+
+  }
+
+  .project-01 {
+    left: 0%;
+  }
+
+  .project-02 {
+    left: 100%;
+  }
+
+}
+
+.section-grid,
+.section-sub {
+
+  .hdr {
+    display: none;
+  }
+
+  .projects {
+    font-size: 0;
+    text-align: left;
+
+    li {
+      width: 50%;
+      text-align: center;
+      display: inline-table;
+      background-color: $light-gray;
+
+      a {
+        width: 100%;
+        padding: calc(56.25% / 2) 0;
+        color: #fff;
+        font-size: 1.6rem;
+        font-family: $font-medium;
+        text-transform: uppercase;
+        display: table-cell;
+        vertical-align: middle;
+        background: rgba(0,0,0,0.6);
+        opacity: 0;
+        transition: opacity 0.25s;
+      }
+
+      a:hover,
+      a:focus {
+        opacity: 1;
+      }
+
+    }
+
+  }
+
+}
+
+.project {
+
+  .section-video {
+    position: relative;
+
+    .video {
+      width: 100%;
+      height: auto;
+    }
+
+    .btn-play {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+
+    }
+
+    .btn-play:before {
+      content: '';
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      background: #000;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: calc(50% - 0.5rem);
+      transform: translateX(-50%) translateY(-50%);
+      transition: opacity 0.25s;
+    }
+
+    .btn-play:hover:before {
+      opacity: 0.25;
+    }
+
+  }
+
+  .section-sub {
+
+    .container {
+      width: 66.66%;
+      padding: 0 2rem 0 0;
+
+      .hdr {
+        font-size: 3.6rem;
+        font-family: $font-light;
+        line-height: initial;
+        text-transform: none;
+        display: block;
+      }
+
+      .hdr-sub {
+        font-size: 1.6rem;
+        font-family: $font-medium;
+        text-transform: uppercase;
+        margin: 3rem 0 1rem;
+      }
+
+    }
+
+    .container + .container {
+      width: 33.33%;
+      padding: 0;
+
+      .projects {
+        margin: 3rem 0 0;
+
+        li {
+          width: 100%;
+          margin: 0 0 1rem;
+          display: table;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+.project-01 {
+  background: url(../img/bg-project-ocearch.jpg) no-repeat left top;
+  background-size: cover;
+}
+
+.project-02 {
+  background: url(../img/bg-project-carmageddon.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+/* CONTACT */
+
+.section-contact,
+.section-client {
+  color: $dark-gray;
+
+  .hdr {
+    font-size: 3.6rem;
+    font-family: $font-light;
+    margin: 0 0 4rem;
+  }
+
+  .form {
+    margin: 0 25%;
+    text-align: left;
+
+    .label,
+    .input,
+    .textarea {
+      display: block;
+      width: 100%;
+      font-size: 1.4rem;
+      font-family: $font-medium;
+      box-sizing: border-box;
+    }
+
+    .label {
+      text-transform: uppercase;
+      margin: 0 0 0.8rem;
+      display: inline-block;
+      width: auto;
+    }
+
+    .input,
+    .textarea {
+      border: 2px solid rgba(255,255,255,0);
+      background: rgba(255,255,255,0.7);
+      padding: 0.6rem 1rem;
+      outline: 0 none;
+      margin: 0 0 2rem;
+      transition: border 0.25s;
+    }
+
+    .textarea {
+      height: 12rem;
+    }
+
+    .input:focus,
+    .textarea:focus {
+      border-color: rgba(255,255,255,1);
+    }
+
+    .submit-btn ~ .message {
+      font-size: 1.6rem;
+      line-height: 3.4rem;
+      margin: 0 0 0 2rem;
+      vertical-align: top;
+      display: inline-block;
+    }
+
+    .error {
+      font-family: $font-light;
+      display: inline-block;
+      margin: 0 0 0 1rem;
+      font-size: 1.3rem;
+      vertical-align: baseline;
+    }
+
+  }
+
+}
+
+.home .section-contact {
+  background: url(../img/bg-home-contact.jpg) no-repeat center bottom;
+  background-size: cover;
+
+  .label,
+  .submit-btn ~ .message,
+  .error {
+    color: #fff;
+  }
+
+}
+
+.contact .section-contact {
+  background: url(../img/bg-contact.jpg) no-repeat center center;
+  background-size: cover;
+
+  .hdr {
+    color: #fff;
+  }
+
+}
+
+/* CLIENT */
+
+.section-client {
+  background: url(../img/bg-client.jpg) no-repeat center center;
+  background-size: cover;
+  color: #fff;
+
+  .form {
+    margin: 0 35% 10%;
+  }
+
+}
+
+/* PAGINATION */
+
+.pag {
+  display: inline-block;
+  font-size: 0;
+  position: absolute;
+  bottom: 12rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  li {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #888;
+    display: inline-block;
+    margin: 0 0.4rem;
+    cursor: pointer;
+  }
+
+  .on {
+    background: #fff;
+    cursor: default;
+  }
+
+}
+
+.prev,
+.next {
+  @extend .sprite;
+  width: 70px;
+  height: 64px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.25s;
+}
+
+.prev {
+  left: 0;
+  background-position: -410px -18px;
+  border-radius: 0 8px 8px 0;
+}
+
+.next {
+  right: 0;
+  background-position: -220px -18px;
+  border-radius: 8px 0 0 8px;
+}
+
+.prev:hover,
+.prev:focus {
+  background-position: -510px -18px;
+  background-color: rgba(255,255,255,0.7);
+}
+
+.next:hover,
+.next:focus {
+  background-position: -320px -18px;
+  background-color: rgba(255,255,255,0.7);
+}
+
+/* BUTTONS */
+
+.btn {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  text-transform: uppercase;
+  border: 2px solid #fff;
+  border-radius: 0;
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.25s;
+}
+
+.btn:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.75;
+}
+
+.link-btn {
+  @extend .btn;
+  color: inherit;
+  font-size: 1.6rem;
+  font-family: $font-medium;
+  line-height: initial;
+  padding: 1rem 3rem 0.8rem;
+  margin: 3rem 0 0;
+}
+
+.submit-btn,
+.contact-btn {
+  @extend .btn;
+  font-size: 1.4rem;
+  font-family: $font-medium;
+  line-height: initial;
+  padding: 0.8rem 2rem 0.6rem;
+  background: none;
+  color: #fff !important;
+  cursor: pointer;
+  outline: none;
+}
+
+.home .submit-btn,
+.contact .submit-btn,
+.about .contact-btn {
+  background: $dark-gray;
+  border-color: $dark-gray;
+}
+
+.client .submit-btn {
+  width: 100%;
+}
+
+/* FOOTER */
+
+.footer {
+  color: #fff;
+  font-size: 1.2rem;
+  background: $dark-gray;
+  padding: 1.4rem;
+  text-align: center;
+  display: block;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.home .footer {
+  position: absolute;
+}

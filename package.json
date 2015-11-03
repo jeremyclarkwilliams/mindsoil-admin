@@ -1,0 +1,12 @@
+{
+  "name": "mindsoil",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "~4.13.2",
+    "jquery-file-upload-middleware": "^0.1.7",
+    "method-override": "~2.3.5",
+    "mongoose": "^4.1.0",
+    "uid2": "0.0.3"
+  }
+}

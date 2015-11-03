@@ -1,0 +1,81 @@
+$font-light: 'DINNextLTPro-Light';
+$font-medium: 'DINNextLTPro-Regular';
+$font-bold: 'DINNextLTPro-Bold';
+
+$lighter-gray: #ccc;
+$light-gray: #999;
+$medium-gray: #666;
+$dark-gray: #222;
+$green: #2aa442;
+$red: #971b1b;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  font-family: $font-medium,sans-serif;
+  background: #f8f8f8;
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.home {
+  overflow-y: hidden;
+}
+
+.home .frame {
+  width: 100%;
+  background: #f8f8f8;
+  position: relative;
+  top: 0;
+  /*transition: top 0.5s;*/
+  z-index: 10;
+}
+
+button,
+input[type="button"],
+a {
+  padding: 0;
+  margin: 0;
+  border: 0 none;
+  background: none;
+  outline: 0 none;
+  cursor: pointer;
+}
+
+input[type="button"]::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+
+input,
+textarea{
+  -webkit-border-radius: 0;
+}
+
+a {
+  color: $dark-gray;
+  text-decoration: none;
+  transition: color 0.25s;
+  pointer-events: auto;
+}
+
+a:hover {
+  color: inherit;
+}
+
+.sprite {
+  background: url(../img/sprites.svg) no-repeat transparent;
+}

@@ -1,0 +1,21 @@
+<div class="container" ng-controller="ProjectListingController">
+  <h3 class="hdr-sub">Projects ({{ projects.length }})</h3>
+  <ul class="project-list">
+    <li ng-repeat="project in projects">
+      <h4 class="title">{{project.name}}</h4>
+      <a ng-href="project/{{project.urlname}}" class="admin-btn">Edit</a>
+      <button ng-class="{ 'show-btn':!project.show, 'hide-btn':project.show }" ng-click="toggleDisplay()">{{ (project.show) ? 'Hide' : 'Show' }}</button>
+      <button class="fa fa-home" ng-class="{ on:project.home }" ng-click="toggleHome()"></button>
+    </li>
+  </ul>
+  <a ng-href="project" class="admin-btn">Add</a>
+</div>
+<div class="container">
+  <h3 class="hdr-sub">Homepage Video</h3>
+  <button class="admin-btn">Add</button>
+</div>
+<!--
+<div class="container">
+  <h3 class="hdr-sub">Quotes</h3>
+</div>
+-->

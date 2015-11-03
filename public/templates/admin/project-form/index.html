@@ -1,0 +1,45 @@
+<div class="container">
+  <h3 class="hdr-sub">Project <span ng-show="projectform.name.$valid">- {{project.name}}</span></h3>
+  <form id="project-form" name="projectform" class="form" enctype="multipart/form-data" novalidate>
+    <input type="hidden" value="{{project.uid}}" name="uid" ng-model="project.uid" />
+    <label for="project-name" class="label">Project Name</label><span class="error" ng-show="projectform.name.$error.uniqueName">name exists</span>
+    <input type="text" id="project-name" class="input" name="name" ng-model="project.name" ng-change="checkName()" required />
+    <label for="project-title" class="label">Title</label>
+    <input type="text" id="project-title" class="input" name="title" ng-model="project.title" required />
+    <label for="project-blurb" class="label">Blurb</label>
+    <input type="text" id="project-blurb" class="input" name="blurb" ng-model="project.blurb" required />
+    <label for="project-objective" class="label">Objective</label>
+    <textarea id="project-objective" class="textarea" name="objective" ng-model="project.objective" required></textarea>
+    <label for="project-solution" class="label">Solution</label>
+    <textarea id="project-solution" class="textarea" name="solution" ng-model="project.solution" required></textarea>
+    <fieldset class="media-input" id="image-input">
+      <input type="file" class="input-hide" name="imagefile" data-url="/api/upload/media" />
+      <button class="admin-btn add-btn">{{(projectform.imagefilefake.value || project.imagefull) ? 'Update' : 'Add'}} Image</button>
+      <input type="text" class="input file-field" name="imagefilefake" ng-model="imagefilefake" />
+      <button class="save-btn upload-btn" ng-show="projectform.imagefilefake.value">Upload Image</button>
+      <div class="progress"><span class="bar" style="width: 0%;"></span><span>Upload Progress...</span></div>
+      <input type="hidden" value="{{project.imagefull}}" name="imagefull" ng-model="project.imagefull" />
+      <input type="hidden" value="{{project.imagecropped}}" name="imagecropped" ng-model="project.imagecropped" />
+      <input type="hidden" value="{{project.imagemobile}}" name="imagemobile" ng-model="project.imagemobile" />
+      <img ng-src="{{project.imagefull}}" ng-show="project.imagefull" />
+      <p class="message" ng-hide="project.imagefull">No image added</p>
+    </fieldset>
+    <fieldset class="media-input" id="video-input">
+      <input type="file" class="input-hide" name="videofile" data-url="/api/upload/media" />
+      <button class="admin-btn add-btn">{{(projectform.videofilefake.value || project.video) ? 'Update' : 'Add'}} Video</button>
+      <input type="text" class="input file-field" name="videofilefake" ng-model="videofilefake" />
+      <button class="save-btn upload-btn" ng-show="projectform.videofilefake.value">Upload Video</button>
+      <div class="progress"><span class="bar" style="width: 0%;"></span><span>Upload Progress...</span></div>
+      <input type="hidden" value="{{project.video}}" name="video" ng-model="project.video" />
+      <video class="video" ng-show="project.video">
+        <source ng-src="{{project.video}}" type="video/mp4">
+      </video>
+      <p class="message" ng-hide="project.video">No video added</p>
+    </fieldset>
+    <div>
+      <button id="project-save" class="save-btn" ng-click="saveProject()" ng-disabled="projectform.$invalid">Save</button>
+      <button id="project-save-return" class="save-btn" ng-click="saveAndReturn()" ng-disabled="projectform.$invalid">Save &amp; Return</button>
+      <a ng-href="/admin" id="project-cancel" class="cancel-btn">Cancel</a>
+    </div>
+  </form>
+</div>
