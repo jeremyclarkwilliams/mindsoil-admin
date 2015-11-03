@@ -15,6 +15,8 @@ Run Node app:<br />
 
 Open browser and navigate to [localhost:5000/admin/](http://localhost:5000/admin/)
 
+**OR View as deployed on [Heroku](https://shrouded-sands-8450.herokuapp.com/admin/)**
+
 #### Current Panel Features
 
 * See listing and number of all projects
