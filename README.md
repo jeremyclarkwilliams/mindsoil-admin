@@ -1,6 +1,8 @@
 # mindsoil-admin
 ### MEAN app for Mindsoil CMS
 
+**View Locally**
+
 Clone repository:<br />
 <code>$ git clone https://github.com/jeremyclarkwilliams/mindsoil-admin.git</code>
 
