@@ -176,7 +176,7 @@
 
     if (typeof $routeParams.name !== undefined) {
       $http.get('/api/projects/' + $routeParams.name).success(function(data) {
-          console.log(data);
+          //console.log(data);
           $scope.project = data;
         }).error(function(data) {
           console.log('Error: ' + data);

@@ -36,7 +36,7 @@
     })(request, response, next);
   });
   upload.on('begin', function (fileInfo, request, response) {
-    console.log(fileInfo.type);
+    //console.log(fileInfo.type);
     var ext = fileInfo.name.substr(fileInfo.name.lastIndexOf('.') + 1);
     fileInfo.name = request.fields.type + '.' + ext;
   });
@@ -78,7 +78,7 @@
 
   // add project
   app.post('/api/projects', function(request, response) {
-    console.log(request.body);
+    //console.log(request.body);
     Project.create({
       uid: request.body.uid,
       name: request.body.name,
@@ -219,8 +219,8 @@
   };
 
   // listen
-  app.listen(8080, function() {
-    console.log('Running Express on 8080');
+  app.listen(5000, function() {
+    console.log('Running Express on 5000');
   });
 
 })();
